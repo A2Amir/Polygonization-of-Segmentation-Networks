@@ -43,6 +43,6 @@ for i in range(len(number_of_objects)):
 ~~~
 
  <p align="center">
-<img src="./images/3.png" />
+<img src="./Images/3.png" />
 <p align="center">
 **The final Image is img_box_2**
