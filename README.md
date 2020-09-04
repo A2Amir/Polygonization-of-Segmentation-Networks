@@ -1,4 +1,4 @@
-# Polygonization
+# Polygonization of Segmentation Networks
  
 In this project I am going to polgonize objects in a binary image 
 
