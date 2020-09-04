@@ -4,7 +4,7 @@ In this project I am going to polgonize objects in a binary image
 
 * First by denoising (Denoise function), bilateral filtering (BilateralFilter function) which can keep edges sharp while removing noises and closing (Closing function) which is useful to detect the overall contour of a figure I am going to segment and count the number of of object (ExtractObjects function) in the figure. 
 ~~~python
-img1 =  cv2.imread('./2.png',0)#4_athens_epsg_32634_high.png#5_copenhagen_epsg_32633_low.png#test_image.jpg.png#5_copenhagen_epsg_32633_low.png#4_athens_epsg_32634_high#5_copenhagen_epsg_32633_low#0_copenhagen_epsg_32633_low.png
+img1 =  cv2.imread('./2.png',0)
 denoising = Denoise(img1,20)
 BFilter = BilateralFilter(denoising, 7,75,75)
 Close = Closing(BFilter,4)
@@ -14,7 +14,6 @@ blob_labels, number_of_objects = ExtractObjects(Close)
 
 * After drawing the edge line of the object, the contours are extracted (Extract andDraw Contours function) to draw a bounding box (drawBBOX) which considers the direction of the shape.
 
-**The final Image is img_box_2**
 ~~~python
 
 final_img = np.zeros_like(Close)
@@ -42,3 +41,4 @@ for i in range(len(number_of_objects)):
     img_box, img_box_2 = drawBBOX(contours,contours_img)
     
 ~~~
+**The final Image is img_box_2**
