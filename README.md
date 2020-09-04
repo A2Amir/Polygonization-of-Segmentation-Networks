@@ -41,4 +41,8 @@ for i in range(len(number_of_objects)):
     img_box, img_box_2 = drawBBOX(contours,contours_img)
     
 ~~~
+
+ <p align="center">
+<img src="./images/3.png" />
+<p align="center">
 **The final Image is img_box_2**
