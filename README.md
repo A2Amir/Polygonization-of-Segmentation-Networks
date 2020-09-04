@@ -10,9 +10,9 @@ BFilter = BilateralFilter(denoising, 7,75,75)
 Close = Closing(BFilter,4)
 blob_labels, number_of_objects = ExtractObjects(Close)
 ~~~
-* Then by applying on the each object of the image from the previous step, thresholds on X, Y (Abs_sobel_thresh function), magnitude (Mag_thresh function) and direction (Dir_threshold function) gradients to combine them into a binaray image(named combined_gradient) by using Combined_thresholds function I am going to transforms point of the objects into Hough Lines system in order to better draw edges of the object.
+* Then by applying on the each object of the image from the previous step, bilateral filtering, closing,  thresholds on X, Y (Abs_sobel_thresh function), magnitude (Mag_thresh function) and direction (Dir_threshold function) gradients to combine them into a binaray image(named combined_gradient) by using Combined_thresholds function I am going to transforms point of the objects into Hough Lines system in order to improve and draw better edges of the object.
 
-* After drawing the edge line of the object, the contours are extracted (Extract andDraw Contours function) to draw a bounding box (drawBBOX) which considers the direction of the shape.
+* After drawing the edge line of the object (line_image), the contours are extracted (Extract andDraw Contours function) to draw a bounding box (drawBBOX) which considers the direction of the shape.
 
 ~~~python
 
@@ -45,4 +45,5 @@ for i in range(len(number_of_objects)):
  <p align="center">
 <img src="./Images/3.PNG" />
 <p align="center">
+ 
 **The final Image is img_box_2**
