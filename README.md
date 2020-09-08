@@ -47,3 +47,29 @@ for i in range(len(number_of_objects)):
 <p align="center">
  
 **The final Image is img_box_2**
+
+
+## To find the center of a shape
+~~~
+#find Contours
+image, contours, hierarchy = cv2.findContours(
+                                   image = obj, 
+                                   mode = cv2.RETR_TREE, 
+                                   method = cv2.CHAIN_APPROX_SIMPLE)3
+# sort Contours
+contours = sorted(contours, key = cv2.contourArea, reverse = True)
+
+# get the outer Contours
+c_0 = contours[0]
+
+## find moment
+M = cv2.moments(c_0)
+print(M.keys())
+# The centroid point
+cx = int(M['m10'] / M['m00'])
+cy = int(M['m01'] / M['m00'])
+~~~
+
+ <p align="center">
+<img src="./Images/4.PNG" />
+<p align="center">
